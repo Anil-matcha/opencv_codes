@@ -4,15 +4,15 @@ import numpy as np;
 
 params = cv2.SimpleBlobDetector_Params()
 params.filterByConvexity = True
-params.minConvexity = 0
+params.minConvexity = 0.1
 params.filterByCircularity = True
-params.minCircularity = 0
+params.minCircularity = 0.1
 params.filterByArea = True
 params.minArea = 100
 params.filterByInertia = True
-params.minInertiaRatio = 0
+params.minInertiaRatio = 0.01
 params.minThreshold = 10;
-params.maxThreshold = 255;
+params.maxThreshold = 225;
 
 im = cv2.imread("blob.jpg", cv2.IMREAD_GRAYSCALE) 
 detector = cv2.SimpleBlobDetector_create(params)
